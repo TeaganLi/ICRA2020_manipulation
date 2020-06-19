@@ -1,0 +1,12 @@
+pybullet>=2.4.9
+gym>=0.10.5
+torch
+torchvision
+easydict
+gin-config
+imageio
+imageio-ffmpeg
+tensorboardX
+tqdm
+future_fstrings
+opencv-python
