@@ -10,7 +10,7 @@ from gym import spaces
 from utils.dynamics_calculator import DynamicCalculator, DynamicCalculatorCube
 from pybullet_envs.env_bases import MJCFBaseBulletEnv
 from pybullet_envs.scene_abstract import SingleRobotEmptyScene
-from .base_env import ThreeFingerRobot
+from base_env import ThreeFingerRobot
 
 logger = logging.getLogger(__name__)
 ORI_THRESH = 0.1
@@ -145,7 +145,8 @@ class Gripper2DPrimitiveEnv(MJCFBaseBulletEnv):
         def sample_a_pose(file_path, mode, file_name=None):
             file_list = os.listdir(file_path)
             while 1:
-                file_name = '0.0,-0.15,0.15.npy'  # self.np_random.choice(file_list) if file_name is None else file_name
+                # file_name = '0.0,-0.15,0.15.npy'
+                self.np_random.choice(file_list) if file_name is None else file_name
                 ds = self._contact_loc_parser(file_name)
                 if ds is None: continue
                 # init pose
@@ -549,7 +550,7 @@ if __name__ == '__main__':
         s,rew,done,info = env.step(act)
 
         if done:
-            print(info)
+            # print(info)
             if info['custom']['epi_len'] == 200:
                 print("time exceeds")
             elif info['custom']['is_succ']:

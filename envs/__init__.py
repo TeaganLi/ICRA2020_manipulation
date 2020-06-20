@@ -152,11 +152,3 @@ register(
                 delta_slide=[0.04,0.04,0.04], distance_threshold=0.05,
                 orientation_threshold=0.2, rew_min_clip=-2)
 )
-
-register(
-    id='Gripper2DPrimitiveDiscreteControlBlockGravity-v0',
-    entry_point='envs.low_level_controller_env:Gripper2DPrimitiveDiscreteReposeBlockEnv',
-    max_episode_steps=200.,
-    reward_threshold=200.,
-    kwargs=dict(gravity=-9.8)
-)

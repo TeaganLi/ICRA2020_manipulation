@@ -12,10 +12,10 @@ from gym import GoalEnv
 from gym.utils import seeding
 from pybullet_utils import bullet_client
 
-from three_finger.utils.dynamics_calculator import DynamicCalculator
+from utils.dynamics_calculator import DynamicCalculator
 from pybullet_envs.env_bases import MJCFBaseBulletEnv
 from pybullet_envs.scene_abstract import SingleRobotEmptyScene
-from three_finger.envs.base_env import URDFBasedRobot, ThreeFingerRobot
+from base_env import URDFBasedRobot, ThreeFingerRobot
 
 logger = logging.getLogger(__name__)
 ORI_THRESH = 0.1
